@@ -1,12 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1083015_xnlcifqg1.css">
+    <link href="https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css" rel="stylesheet">
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+    }
+
+    body {
+        background: #5c5c5c;
+        padding-bottom: 50px;
+    }
+
+    .w {
+        width: 950px;
+        margin: 0 auto;
+    }
+
+    .clearfix:after {
+        content: "";
+        height: 0;
+        line-height: 0;
+        display: block;
+        visibility: hidden;
+        clear: both;
+    }
+
+    .clearfix {
+        zoom: 1;
+    }
+
+
+    header {
+        padding-top: 30px;
+    }
+
+    header .left-top {
+        font-size: 40px;
+        color: #fff;
+        float: left;
+    }
+
+    header .right-top i {
+        font-family: "iconfont";
+        font-size: 16px;
+        float: right;
+    }
+
+    .content .nav {
+        margin: 30px 0 10px 0;
+    }
+
+    .content .nav ul {
+        width: 100%;
+        /* float: left; */
+        background: #2e2e2e;
+    }
+
+    .nav ul li {
+        list-style: none;
+        float: left;
+        width: 25%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 16px;
+        color: #fff;
+        user-select: none;
+    }
+
+    .nav ul li:hover {
+        background: #e6e6e6;
+        color: black;
+    }
+
+    .nav ul li.atcive {
+        background: #1cd4d8;
+        color: black;
+    }
+
+    .num {
+        display: none;
+    }
+
+    .isShow {
+        display: block;
+    }
+
+    .content .details {
+        background: #fff;
+        padding: 60px 40px;
+    }
+
+    .details .details-left {
+        width: 60%;
+        float: left;
+    }
+
+    .details .details-left strong {
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+
+    .title-style {
+        font-size: 32px;
+        color: #1cd4d8;
+    }
+
+    .details-left .intro {
+        border-top: 1px solid #d2d2d2;
+        padding-top: 30px;
+        display: inline-block;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .details-left .btn {
+        margin-top: 120px;
+        padding: 10px 70px;
+        border-radius: 10px;
+        border: none;
+        font-size: 20px;
+        color: #fff;
+        background: #1cd4d8;
+        font-weight: 700;
+    }
+
+    .intro-style {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .details .details-right {
+        float: right;
+    }
+
+    .details .details-right img {
+        height: 400px;
+    }
+
+    .details .buttom {
+        border-top: 2px solid #e6e6e6;
+        margin: 100px 0
+         0 0;
+    }
+
+    .buttom .buttom-title {
+        margin: 20px auto;
+        text-align: center;
+        font-size: 44px;
+        color: #696969;
+    }
+
+    .buttom ul li {
+        width: 33.33%;
+        list-style: none;
+        float: left;
+        margin-top: 20px;
+        padding: 0 50px;
+    }
+
+    .buttom ul li .buttom-icon {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        /* background: #1cd4d8; */
+        margin: 0 auto 20px auto;
+        border: 12px solid #1cd4d8;
+        text-align: center;
+        line-height: 120px;
+    }
+
+     .buttom-icon i{
+        font-size:64px;
+     }
+
+    /* 基本信息开始 */
+    .content .details-two {
+        background: #fff;
+        padding: 30px 20px;
+    }
+
+    .details-two .img-two {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .details-two-title {
+        text-align: center;
+        font-size: 30px;
+        color: #696969;
+    }
+
+    .details-two .img-two>img {
+        width: 760px;
+        height: 400px;
+    }
+
+    .details-two .myself {
+        padding: 20px 200px;
+        /* border-bottom: 2px solid #5c5c5c; */
+    }
+
+    .details-two .myself ul {
+        float: left;
+    }
+
+    .myself ul li {
+        font-size: 16px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .details-two .technology {
+        padding: 20px 200px;
+    }
+
+    .details-two .technology ul {
+        margin-top: 10px;
+    }
+
+    .technology ul li {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    /* 基本信息结束 */
+    /* 项目介绍开始 */
+    .content .details-three {
+        background: #fff;
+        padding: 20px 30px;
+    }
+
+    .details-three .three-box {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        /* background: #1cd4d8; */
+        float: left;
+        margin-left: 80px;
+        margin-top: 20px;
+        border: 12px solid #1cd4d8;
+    }
+
+    .details-three .content-three {
+        height: 280px;
+        border-bottom: 2px solid #e6e6e6;
+    }
+
+    .details-three .content-three ul {
+        float: left;
+        margin-top: 30px;
+        margin-right: 30px;
+        margin-left:30px;
+        width:600px;
+    }
+
+    .content-three ul li {
+        line-height: 30px;
+    }
+
+    /* 项目介绍结束 */
+    /* 我的开始 */
+    .content .details-four {
+        background: #fff;
+        padding: 30px 20px;
+    }
+
+    .details-four .four-img {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .details-four .four-img>img {
+        width: 760px;
+        height: 400px;
+    }
+
+    .details-four .tell {
+        padding: 20px 200px;
+    }
+
+    .details-four .tell span {
+        display: block;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .project-item{
+        text-align: center;
+    }
+
+    .project-item span{
+        margin-bottom:5px;
+        line-height: 1.5;
+    }
+
+    .project-li-2{
+        animation-delay: .6s;
+    }
+
+    .project-li-3{
+        animation-delay: 1.2s;
+    }
+
+    .project-main{
+        margin-left:30px;
+    }
+</style>
+
 <body>
-    小盈盈的个人简历
+    <div class='w'>
+        <header class="clearfix">
+            <div class="left-top">
+                <span>伍楚盈个人简历</span>
+            </div>
+            <!-- <div class="right-top">
+                <i class="iconfont icon-weibiaoti-"></i>
+            </div> -->
+        </header>
+        <div class="content">
+            <div class="nav">
+                <ul class="clearfix">
+                    <li class="atcive">首页</li>
+                    <li>基本信息</li>
+                    <li>项目介绍</li>
+                    <li>我的</li>
+                </ul>
+            </div>
+            <!-- 首页开始 -->
+            <div class="num isShow details">
+                <div class="clearfix">
+                    <div class="details-left">
+                        <strong><span class="title-style">您好！</span>欢迎来观看我的<span class="title-style">个人简历</span><br /></strong>
+                        <span class="intro">本人从事前端一年半左右，做过<span class="intro-style">PC端、移动端、和小程序</span>开发等，
+                            擅长用vue进行开发，掌握vue官方脚手架Vue CLI搭建项目
+                            如果您感兴趣，那么就请往下看吧~</span>
+                        <button class="btn">深入了解</button>
+                    </div>
+                    <div class="details-right">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552374775948&di=fb1d347d2aefadd58c928d917576cbd6&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2F201707%2F10%2F122426d016dxk06kxooodu.jpg"
+                            alt="">
+                    </div>
+                </div>
+                <div class="buttom">
+                    <div class="buttom-title">项目介绍</div>
+                    <ul class="clearfix">
+                        <li class="animated fadeInUp">
+                            <div class="buttom-icon">
+                                <i class="iconfont icon-yidongduan"></i>
+                            </div>
+                            <div class="project-item">
+                                <span style="display: block;text-align: center; font-size: 20px;color: #5c5c5c; font-weight: 700;">芸众商城移动端</span>
+                                <span>该商城是移动端商城项目，基于企业微信公众号开发，属于B2C类商城应用</span>
+                            </div>
+                        </li>
+                        <li class="animated fadeInUp project-li-2">
+                            <div class="buttom-icon">
+                                <i class="iconfont icon-laptop-device-hardware-computer-screen-display-fdceffe"></i>
+                            </div>
+                            <div class="project-item" > 
+                                <span style="display: block;text-align: center; font-size: 20px;color: #5c5c5c; font-weight: 700;">商城后台管理系统</span>
+                                <span>电商后台商品数据管理系统</span>
+                            </div>
+                        </li>
+                        <li class="animated fadeInUp project-li-3">
+                            <div class="buttom-icon">
+                                <i class="iconfont icon-xiaochengxu"></i>
+                            </div>
+                            <div class="project-item">
+                                <span style="display: block;text-align: center; font-size: 20px;color: #5c5c5c; font-weight: 700;">黑茶城小程序</span>
+                                <span>黑茶商城小程序</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 首页结束 -->
+            <!-- 基本信息开始 -->
+            <div class="num details-two">
+                <h4 class="details-two-title">关 于 我</h4>
+                <div class="img-two">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552382871650&di=4c4dbd8fd1cb3061351f8629a3ed8f89&imgtype=0&src=http%3A%2F%2Fimg01.yitubao.com%2F171221%2F813-1G22104401393.jpg"
+                        alt="">
+                </div>
+                <!-- <div class="myself"> -->
+                <div class="myself clearfix">
+                    <ul>
+                        <li>姓 名：伍楚盈</li>
+                        <li>电 话：13144115017</li>
+                        <li>邮 箱：13144115017@163.com</li>
+                    </ul>
+                    <ul style="float: right;">
+                        <li>年 龄：23</li>
+                        <li>性 别：女</li>
+                        <li>住 址：广东省广州市白云区</li>
+                    </ul>
+                </div>
+                <!-- </div> -->
+                <div class="technology">
+                    <h4 style="font-size: 24px;color: #1cd4d8;">专业技能</h4>
+                    <ul>
+                        <li>1、掌握html+css3+JavaScript等前端开发技术</li>
+                        <li>2、掌握使用ajax, fetch, axios等进行异步请求交互</li>
+                        <li>3、掌握vue 框架开发网页应用，理解mvvm开发模式的概念，有实际的项目工作经验</li>
+                        <li>4、熟悉webpack构建工具的使用，掌握vue官方脚手架Vue CLI搭建项目</li>
+                        <li><strong>除了上述常用的前端技术外，还会关注前端领域的其他相关技术，如mock.js模拟数据、Echarts图标库、小程序开发等！</strong></li>
+                    </ul>
+                </div>
+                <div class="technology" style="margin-top: 20px;">
+                    <h4 style="font-size: 24px;color: #1cd4d8;">工作经历</h4>
+                    <ul>
+                        <li><strong>广州芸众信息科技有限公司（前端开发）</strong></li>
+                        <li><span>2018.2-2019.2</span></li>
+                        <li>1、负责前后端页面的展示</li>
+                        <li>2、与后台开发工程师协作，完成各种数据交互、动态信息展现</li>
+                        <li>3、维护及优化网站前端页面性能</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 基本信息结束 -->
+            <!-- 项目介绍开始 -->
+            <div class="num details-three">
+                <h4 class="details-two-title">项目介绍</h4>
+                <div class="content-three clearfix">
+                    <div class="three-box"></div>
+                    <ul>
+                        <li><strong>项目：</strong><span>芸众移动商城</span></li>
+                        <li><strong>项目介绍：</strong><span>该商城是移动端商城项目，基于企业微信公众号开发，属于B2C类商城应用</span></li>
+                        <li><strong>技术：</strong><span>使用vue前端框架技术，团队采用webpack独立搭建开发环境</span></li>
+                        <li><strong>主要负责：</strong><span>商城页面的静态实现和根据后台api进行数据交互，以及二开项目的跟进</span></li>
+                    </ul>
+                </div>
+                <div class="content-three clearfix">
+                    <div class="three-box"></div>
+                    <ul>
+                        <li><strong>项目：</strong><span>商城后台管理系统</span></li>
+                        <li><strong>项目介绍：</strong><span>电商后台商品数据管理系统</span></li>
+                        <li><strong>技术：</strong><span>使用vue+element-ui开发，团队采用webpack独立搭建开发环境</span></li>
+                        <li><strong>主要负责：</strong>
+                            <ol class="project-main">
+                                <li>1、登陆注册页面静态以及交互(vue-router+localstorage)</li>
+                                <li>2、商城业绩曲线展示(Echarts)</li>
+                                <li>3、商品页的增删改等</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-three clearfix">
+                    <div class="three-box"></div>
+                    <ul>
+                        <li><strong>项目：</strong><span>黑茶城小程序</span></li>
+                        <li><strong>项目介绍：</strong><span>黑茶商城小程序</span></li>
+                        <li><strong>技术：</strong><span>使用mpvue框架搭建开发</span></li>
+                        <li><strong>主要负责：</strong><span>静态页面的实现以及利用WXRequest实现交互</span></li>
+                    </ul>
+                </div>
+                <div class="content-three clearfix">
+                    <div class="three-box"></div>
+                    <ul>
+                        <li><strong>项目：</strong><span>160商城官网</span></li>
+                        <li><strong>项目介绍：</strong><span>省钱又赚钱的美妆</span></li>
+                        <li><strong>技术：</strong><span>使用jQuery进行开发</span></li>
+                        <li><strong>主要负责：</strong><span>静态页面的实现以及使用jQuery插件实现交互（如：iScroll.js / swipe.js）</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 项目介绍结束 -->
+            <!-- 我的-开始 -->
+            <div class="num details-four">
+                <div class="four-img">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552387148940&di=6c2397b779635e657666044d6aca2721&imgtype=0&src=http%3A%2F%2Fimg01.yitubao.com%2F171221%2F813-1G221043A397.jpg"
+                        alt="">
+                </div>
+                <div class="tell">
+                    <h3>联系方式：</h3><span>13144115017</span>
+                    <h3>邮箱：</h3><span>13144115017@163.com</span>
+                </div>
+            </div>
+            <!-- 我的-结束 -->
+        </div>
+    </div>
 </body>
+
 </html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $('.nav li').on("click", function () {
+        var index = $(this).index();
+        $(this).addClass("atcive").siblings().removeClass("atcive");
+        $(".num").eq(index).addClass("isShow").siblings().removeClass("isShow");
+    });
+
+    $(".btn").click(function(){
+        $($('.nav li')[1]).addClass("atcive").siblings().removeClass("atcive");
+        $(".num").eq(1).addClass("isShow").siblings().removeClass("isShow");
+    });
+    
+</script>
